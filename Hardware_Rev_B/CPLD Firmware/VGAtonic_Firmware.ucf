@@ -2,20 +2,21 @@ NET "CLK" LOC = "P22"; 			# Input from LTC693 Programmable Oscillator
 
 
 // Outside World SPI Interface
-NET "EXT_SCK" 			LOC = "P6";
-NET "EXT_MOSI" 		LOC = "P7";
-NET "EXT_MISO" 		LOC = "P8";
-NET "EXT_SEL_CPLD" 	LOC = "P9";
+NET "EXT_SCK"			LOC = "P6";
+NET "EXT_MOSI"			LOC = "P7";
+NET "EXT_MISO"			LOC = "P8";
+NET "EXT_SEL_CPLD"		LOC = "P9";
 
 // Outside World SPI Interface
-NET "AVR_SCK" 			LOC = "P10";
-NET "AVR_MOSI" 		LOC = "P11";
-//NET "AVR_MISO" 		LOC = "P12";
-//NET "AVR_SEL_CPLD" 	LOC = "P13";
+NET "AVR_SCK"			LOC = "P10";
+NET "AVR_MOSI"			LOC = "P11";
+//NET "AVR_MISO"		LOC = "P12";
+//NET "AVR_SEL_CPLD"	LOC = "P13";
+
 // Control Signal to Ignore Outside SPI - Switch 1
-//NET "SW_1" 				LOC = "P2";
-NET "AVR_CPLD_EXT_1"	LOC = "P14";
-NET "AVR_CPLD_EXT_2"	LOC = "P15";
+//NET "SW_1"				LOC = "P2";
+NET "AVR_CPLD_EXT_1"		LOC = "P14";
+NET "AVR_CPLD_EXT_2"		LOC = "P15";
 
 // VGA Interface
 NET "Pixel<8>"			LOC = "P1"; // Red MSB
@@ -32,6 +33,8 @@ NET "Pixel<0>"			LOC = "P90"; // Blue LSB - Optional; needed for true greys
 
 NET "VSYNC"				LOC = "P89"; // Vertical Sync Signal
 NET "HSYNC"				LOC = "P87"; // Vertical Sync Signal
+
+
 
 // Memory - Addresses, Data, Control Signals
 
@@ -67,6 +70,7 @@ NET "DATA<4>"			LOC = "P76";
 NET "DATA<5>"			LOC = "P77";
 NET "DATA<6>"			LOC = "P78";
 NET "DATA<7>"			LOC = "P79";
+
 
 // GPIO Header, Bottom of Board
 //NET "CPLD_GPIO<1>" LOC = "P28"; 		# CPLD GPIO 1
