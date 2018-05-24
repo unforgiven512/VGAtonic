@@ -35,40 +35,44 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+
+
 entity SPI_Slave is
-	Port (
+	PORT (
 		--------------------------------------------------------
 		--                   SPI Declarations                 --
 		--------------------------------------------------------
 		
-		SEL_SPI							: in STD_LOGIC;
+		SEL_SPI								: in STD_LOGIC;
 		
 		-- SPI Pins from World
-		EXT_SCK 							: in STD_LOGIC;
-		EXT_SEL 							: in STD_LOGIC;
+		EXT_SCK								: in STD_LOGIC;
+		EXT_SEL								: in STD_LOGIC;
 		EXT_MOSI							: in STD_LOGIC;
-		EXT_MISO							: out STD_LOGIC;	
+		EXT_MISO							: out STD_LOGIC;
 		
 		-- SPI Pins from AVR
-		AVR_SCK 							: in STD_LOGIC;
-		AVR_SEL 							: in STD_LOGIC;
+		AVR_SCK								: in STD_LOGIC;
+		AVR_SEL								: in STD_LOGIC;
 		AVR_MOSI							: in STD_LOGIC;
 --		AVR_MISO							: out STD_LOGIC;	-- No need for MISO; the board is backwards here so leave it off.
-		
+
 		-- One byte FIFO 
-		SPI_DATA_CACHE    					: out STD_LOGIC_VECTOR(7 downto 0) := "00000000";
+		SPI_DATA_CACHE						: out STD_LOGIC_VECTOR(7 downto 0) := "00000000";
 
 		-- Asynchronous flags for signals sent to display logic
-		SPI_CACHE_FULL_FLAG 				: out STD_LOGIC := '0'; 
-		SPI_CMD_RESET_FLAG 					: out STD_LOGIC := '0';
-		
+		SPI_CACHE_FULL_FLAG					: out STD_LOGIC := '0'; 
+		SPI_CMD_RESET_FLAG					: out STD_LOGIC := '0';
+
 		-- Async Flags returned from user logic
-		ACK_USER_RESET          			: in STD_LOGIC;
-		ACK_SPI_BYTE            			: in STD_LOGIC
+		ACK_USER_RESET						: in STD_LOGIC;
+		ACK_SPI_BYTE						: in STD_LOGIC
 	
 	);
 
 end SPI_Slave;
+
+
 
 architecture Behavioral of SPI_Slave is
 
